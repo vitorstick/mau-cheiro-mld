@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma cívica para relato rápido e anónimo de maus cheiros e odores no concelho da Mealhada.">
+  <title>Relato de Odores — Concelho da Mealhada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Cabeçalho Institucional Cívico -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand-badge">
+          <span class="badge-dot"></span>
+          <span>Iniciativa Cívica — Concelho da Mealhada</span>
+        </div>
+        <div class="brand-logo">
+          <div class="emblem-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="10" fill="#1E5A38"/>
+              <path d="M20 7C14.5 7 10 11.5 10 17C10 23.5 20 33 20 33C20 33 30 23.5 30 17C30 11.5 25.5 7 20 7Z" fill="#2D7A4D" stroke="#EAF3EC" stroke-width="1.5"/>
+              <circle cx="20" cy="16" r="4.5" fill="#5D2555"/>
+              <path d="M17 26C17 26 18.5 24 20 24C21.5 24 23 26 23 26" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="header-title">Relato de Odores</h1>
+            <p class="header-subtitle">Monitorização e reporte cívico de maus cheiros</p>
+          </div>
+        </div>
+        <p class="header-description">
+          Ajude a identificar focos de odores e maus cheiros no município da Mealhada. O preenchimento é rápido e <strong>todos os campos são opcionais</strong> — preencha apenas o que puder ou desejar.
+        </p>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-container">
+      <!-- Cartão do Formulário -->
+      <section class="card form-card" id="formCard">
+        <div class="card-intro">
+          <div class="badge-optional-info">
+            <span class="info-icon">ℹ️</span>
+            <span>Todos os campos são <strong>opcionais</strong>. Pode enviar de forma 100% anónima.</span>
+          </div>
+        </div>
+
+        <form id="smellReportForm" novalidate>
+          <!-- Campos Ocultos para o FormSubmit.co -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_subject" value="[Alerta] Novo Relato de Mau Cheiro no Concelho da Mealhada">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <!-- Campo 1: Localização -->
+          <div class="form-group">
+            <label class="field-label" for="localizacao">
+              <span class="label-text">1. Localização aproximada</span>
+              <span class="optional-badge">Opcional</span>
+            </label>
+            <p class="field-hint">Rua, lugar, bairro, zona industrial ou ponto de referência.</p>
+            <div class="input-with-button">
+              <input 
+                type="text" 
+                id="localizacao" 
+                name="Localizacao" 
+                placeholder="Ex: Zona Industrial, perto da EN1, junto à passagem de nível..." 
+                autocomplete="street-address"
+              >
+              <button type="button" id="btnGps" class="btn-location" title="Inserir coordenadas atuais por GPS">
+                <span class="gps-icon">📍</span>
+                <span class="gps-label">Usar GPS</span>
+              </button>
+            </div>
+            <div id="gpsStatus" class="gps-status" style="display: none;"></div>
+          </div>
+
+          <!-- Campo 2: Data e Hora -->
+          <div class="form-group">
+            <label class="field-label" for="dataHora">
+              <span class="label-text">2. Data e Hora da Ocorrência</span>
+              <span class="optional-badge">Opcional</span>
+            </label>
+            <p class="field-hint">Ajuste apenas se o cheiro tiver ocorrido antes do momento atual.</p>
+            <input 
+              type="datetime-local" 
+              id="dataHora" 
+              name="Data_e_Hora"
+            >
+          </div>
+
+          <!-- Campo 3: Intensidade do Odor -->
+          <div class="form-group">
+            <label class="field-label">
+              <span class="label-text">3. Nível de Intensidade</span>
+              <span class="optional-badge">Opcional</span>
+            </label>
+            <p class="field-hint">Qual o impacto do odor na qualidade do ar?</p>
+            
+            <input type="hidden" id="intensidadeInput" name="Intensidade" value="">
+            <div class="intensity-scale" role="radiogroup" aria-label="Intensidade do cheiro">
+              <button type="button" class="intensity-btn" data-level="1" data-value="1 - Ligeiro (percetível ao ar livre)">
+                <span class="intensity-bar bar-1"></span>
+                <span class="intensity-num">1</span>
+                <span class="intensity-label">Ligeiro</span>
+                <span class="intensity-sub">Apenas com o vento</span>
+              </button>
+              <button type="button" class="intensity-btn" data-level="2" data-value="2 - Moderado (incomoda na rua)">
+                <span class="intensity-bar bar-2"></span>
+                <span class="intensity-num">2</span>
+                <span class="intensity-label">Moderado</span>
+                <span class="intensity-sub">Desagradável na rua</span>
+              </button>
+              <button type="button" class="intensity-btn" data-level="3" data-value="3 - Intenso (obriga a fechar janelas)">
+                <span class="intensity-bar bar-3"></span>
+                <span class="intensity-num">3</span>
+                <span class="intensity-label">Intenso</span>
+                <span class="intensity-sub">Obriga a fechar casa</span>
+              </button>
+              <button type="button" class="intensity-btn" data-level="4" data-value="4 - Insuportável (provoca náuseas/ardor)">
+                <span class="intensity-bar bar-4"></span>
+                <span class="intensity-num">4</span>
+                <span class="intensity-label">Insuportável</span>
+                <span class="intensity-sub">Ardor / náuseas</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Campo 4: Descrição e Detalhes -->
+          <div class="form-group">
+            <label class="field-label" for="detalhes">
+              <span class="label-text">4. Detalhes Adicionais</span>
+              <span class="optional-badge">Opcional</span>
+            </label>
+            <p class="field-hint">Alguma observação útil (ex.: tipo de cheiro sentido, direção do vento, duração estimada, sintomas físicos)?</p>
+            <textarea 
+              id="detalhes" 
+              name="Observacoes_Adicionais" 
+              rows="3" 
+              placeholder="Ex: Cheiro químico/adubo; vento vindo de norte; durou cerca de 45 minutos; provocou ardor nos olhos..."
+            ></textarea>
+          </div>
+
+          <!-- Campo 5: Contacto -->
+          <div class="form-group">
+            <label class="field-label" for="contacto">
+              <span class="label-text">5. Contacto para Acompanhamento</span>
+              <span class="optional-badge">Opcional</span>
+            </label>
+            <p class="field-hint">Deixe o seu nome, email ou telefone caso queira ser contactado sobre esta ocorrência. Se deixar em branco, o envio será <strong>100% anónimo</strong>.</p>
+            <input 
+              type="text" 
+              id="contacto" 
+              name="Contacto_Cidadao" 
+              placeholder="Nome, email ou telemóvel (opcional)"
+              autocomplete="name"
+            >
+          </div>
+
+          <!-- Mensagem de Erro / Aviso -->
+          <div id="formError" class="alert-box error" style="display: none;"></div>
+
+          <!-- Botão de Submissão -->
+          <div class="form-actions">
+            <button type="submit" id="btnSubmit" class="btn-submit">
+              <span class="btn-icon">📨</span>
+              <span class="btn-text">Enviar Relato de Mau Cheiro</span>
+            </button>
+            <p class="privacy-note">
+              🔒 <strong>Privacidade Garantida:</strong> Não recolhemos dados pessoais sem autorização. Os relatos destinam-se exclusivamente à identificação e resolução de focos de poluição ambiental.
+            </p>
+          </div>
+        </form>
+      </section>
+
+      <!-- Cartão de Sucesso (apresentado após o envio) -->
+      <section class="card success-card" id="successCard" style="display: none;">
+        <div class="success-icon-wrap">
+          <div class="success-check">✓</div>
+        </div>
+        <h2 class="success-title">Relato Enviado com Sucesso!</h2>
+        <p class="success-msg">
+          Muito obrigado pela sua colaboração. O seu reporte foi registado e enviado por email para verificação das entidades competentes.
+        </p>
+        <div class="success-box">
+          <p><strong>A sua participação é essencial</strong> para mapear e mitigar os episódios de poluição atmosférica e odores desagradáveis no Concelho da Mealhada.</p>
+        </div>
+        <button type="button" id="btnReset" class="btn-secondary">
+          <span>↺</span> Enviar outro relato
+        </button>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-colors-bar" aria-hidden="true">
+          <span class="color-stripe green"></span>
+          <span class="color-stripe purple"></span>
+          <span class="color-stripe silver"></span>
+        </div>
+        <p class="footer-text">
+          Concelho da Mealhada — Plataforma Cívica de Monitorização Ambiental de Odores
+        </p>
+        <p class="footer-subtext">
+          Desenvolvido com respeito pela acessibilidade, simplicidade e proteção de dados (RGPD).
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

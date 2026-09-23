@@ -1,0 +1,12 @@
+{
+  "name": "mld-email",
+  "version": "1.0.0",
+  "description": "Plataforma cívica de relato de odores do Concelho da Mealhada",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["mealhada", "odores", "civic", "formsubmit"],
+  "author": "",
+  "license": "MIT"
+}

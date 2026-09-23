@@ -93,21 +93,8 @@ GMAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx
   * Cada email contém o registo oficial com data e hora exata, a tabela institucional formatada e a confirmação de entrega aos três destinatários.
   * O servidor não cria ficheiros na máquina local, preservando a simplicidade e a privacidade.
 
----
 
-## 7. Opções de Publicação Online (Alojamento)
-
-Como a plataforma possui um backend em Node.js para o envio seguro por SMTP, pode ser publicada gratuitamente ou a baixo custo em qualquer serviço com suporte para Node.js:
-* **Render.com / Railway / Fly.io:** Suportam Node.js diretamente a partir de um repositório GitHub, permitindo configurar as variáveis de ambiente (`GMAIL_USER`, `GMAIL_APP_PASSWORD`) na consola de gestão.
-* **VPS Privado (ex: Ubuntu com PM2):**
-  ```bash
-  npm install -g pm2
-  pm2 start server.js --name "mld-odores"
-  ```
-
----
-
-## 8. Privacidade e Proteção de Dados (RGPD)
+## 78. Privacidade e Proteção de Dados (RGPD)
 
 * Nenhum campo do formulário é de preenchimento obrigatório.
 * Caso o munícipe não preencha o contacto, a submissão é **completamente anónima** e não recolhe dados identificativos.

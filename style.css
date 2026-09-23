@@ -758,62 +758,6 @@ textarea {
   line-height: 1.5;
 }
 
-/* Freguesias e Âmbito */
-.freguesias-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-  margin-top: 1rem;
-}
-
-.freguesia-pill {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  background: #FAFCFA;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.freguesia-pill:hover {
-  border-color: var(--mld-green-border);
-  background-color: var(--mld-green-light);
-}
-
-.pill-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--mld-green);
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-
-.freguesia-pill strong {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-primary);
-}
-
-.pill-note {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: 0.15rem;
-}
-
-.freguesias-hotspots {
-  margin-top: 1.25rem;
-  background: var(--bairrada-purple-light);
-  border: 1px solid var(--bairrada-purple-border);
-  border-radius: var(--radius-sm);
-  padding: 0.9rem 1.15rem;
-  font-size: 0.85rem;
-  color: var(--bairrada-purple-hover);
-  line-height: 1.55;
-}
-
 /* FAQ com details e summary nativos */
 .faq-list {
   display: flex;
@@ -967,9 +911,5 @@ textarea {
   .steps-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-
-  .freguesias-grid {
-    grid-template-columns: 1fr;
   }
 }

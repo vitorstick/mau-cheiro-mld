@@ -264,64 +264,6 @@ textarea {
   min-height: 80px;
 }
 
-/* Campo Localização com Botão GPS */
-.input-with-button {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.input-with-button input {
-  flex: 1;
-}
-
-.btn-location {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background-color: var(--mld-green-light);
-  border: 1.5px solid var(--mld-green-border);
-  color: var(--mld-green);
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.75rem 0.95rem;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.btn-location:hover {
-  background-color: #DDEEE3;
-  color: var(--mld-green-hover);
-}
-
-.btn-location:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.gps-status {
-  font-size: 0.8rem;
-  margin-top: 0.45rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-sm);
-}
-
-.gps-status.loading {
-  color: #0369A1;
-  background-color: #F0F9FF;
-}
-
-.gps-status.success {
-  color: #15803D;
-  background-color: #F0FDF4;
-}
-
-.gps-status.error {
-  color: #B91C1C;
-  background-color: #FEF2F2;
-}
 
 /* ==========================================================================
    Tipo de Odor — Botões Táteis (Pills)
@@ -898,14 +840,6 @@ textarea {
 
   .intensity-btn {
     min-height: 80px;
-  }
-
-  .input-with-button {
-    flex-direction: column;
-  }
-
-  .btn-location {
-    justify-content: center;
   }
 
   .steps-grid {

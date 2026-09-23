@@ -30,7 +30,6 @@ Plataforma cívica e municipal para comunicação e reporte rápido de maus chei
 
 1. **Localização Aproximada** *(Opcional)*
    * Campo de texto aberto: *"Rua, lugar, bairro, zona industrial ou ponto de referência"*.
-   * Botão de apoio: *"📍 Usar GPS"* para obter coordenadas instantâneas com um toque, caso o cidadão autorize.
 
 2. **Data e Hora da Ocorrência** *(Opcional)*
    * Campo pré-preenchido automaticamente com a hora atual, com possibilidade de ajuste manual caso o odor tenha ocorrido anteriormente.

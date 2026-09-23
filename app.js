@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Elementos Interativos
   const dataHoraInput = document.getElementById('dataHora');
-  const btnGps = document.getElementById('btnGps');
   const localizacaoInput = document.getElementById('localizacao');
-  const gpsStatus = document.getElementById('gpsStatus');
 
   const intensidadeInput = document.getElementById('intensidadeInput');
   const intensityBtns = document.querySelectorAll('.intensity-btn');
@@ -56,49 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Detetor Opcional de Localização por GPS
-  if (btnGps && navigator.geolocation) {
-    btnGps.addEventListener('click', () => {
-      gpsStatus.style.display = 'block';
-      gpsStatus.className = 'gps-status loading';
-      gpsStatus.textContent = 'A obter coordenadas GPS...';
-      btnGps.disabled = true;
-
-      navigator.geolocation.getCurrentPosition(
-        (posicao) => {
-          const lat = posicao.coords.latitude.toFixed(5);
-          const lng = posicao.coords.longitude.toFixed(5);
-          const precisao = Math.round(posicao.coords.accuracy);
-
-          const coordenadasTexto = `Coordenadas GPS: ${lat}, ${lng} (precisão ~${precisao}m)`;
-          
-          if (localizacaoInput.value.trim() === '') {
-            localizacaoInput.value = coordenadasTexto;
-          } else {
-            localizacaoInput.value += ` [${coordenadasTexto}]`;
-          }
-
-          gpsStatus.className = 'gps-status success';
-          gpsStatus.textContent = '✓ Coordenadas obtidas com sucesso!';
-          btnGps.disabled = false;
-        },
-        (erro) => {
-          gpsStatus.className = 'gps-status error';
-          if (erro.code === erro.PERMISSION_DENIED) {
-            gpsStatus.textContent = 'Permissão de localização recusada pelo utilizador.';
-          } else {
-            gpsStatus.textContent = 'Não foi possível obter a localização exata.';
-          }
-          btnGps.disabled = false;
-        },
-        { timeout: 10000, enableHighAccuracy: true }
-      );
-    });
-  } else if (btnGps) {
-    btnGps.style.display = 'none';
-  }
-
-  // 5. Submissão do Formulário via Servidor Node.js (Nodemailer)
+  // 3. Submissão do Formulário via Servidor Node.js (Nodemailer)
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     formError.style.display = 'none';
@@ -146,13 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. Botão para Enviar Outro Relato
+  // 4. Botão para Enviar Outro Relato
   if (btnReset) {
     btnReset.addEventListener('click', () => {
       form.reset();
       intensidadeInput.value = '';
       intensityBtns.forEach(b => b.classList.remove('active'));
-      gpsStatus.style.display = 'none';
       preencherDataHoraAtual();
 
       successCard.style.display = 'none';

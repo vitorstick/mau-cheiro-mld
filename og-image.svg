@@ -55,7 +55,7 @@
 
       <!-- Badge 2 -->
       <rect x="250" y="0" width="220" height="48" rx="12" fill="rgba(255, 255, 255, 0.12)"/>
-      <text x="270" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#FFFFFF">📍 Com Apoio GPS</text>
+      <text x="270" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#FFFFFF">⚡ Simples e Rápido</text>
 
       <!-- Badge 3 -->
       <rect x="490" y="0" width="290" height="48" rx="12" fill="rgba(255, 255, 255, 0.12)"/>

@@ -31,7 +31,7 @@ As ocorrências submetidas na plataforma geram alertas diretos e imediatos por c
 
 ## Como Reportar
 1. Aceder a https://mau-cheiro-mld.vercel.app/
-2. Inserir a localização aproximada ou tocar em "Usar GPS" (opcional).
+2. Inserir a localização aproximada (opcional).
 3. Confirmar a data e hora do evento.
 4. Escolher o nível de intensidade (1 - Ligeiro, 2 - Moderado, 3 - Intenso, 4 - Insuportável).
 5. Adicionar notas úteis (opcional) e submeter.

@@ -1,0 +1,19 @@
+{
+  "name": "Relato de Odores — Concelho da Mealhada",
+  "short_name": "Odores Mealhada",
+  "description": "Plataforma cívica para reporte rápido e anónimo de maus cheiros no Concelho da Mealhada.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3F7F4",
+  "theme_color": "#1E5A38",
+  "orientation": "portrait-primary",
+  "lang": "pt-PT",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

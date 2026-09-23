@@ -3,12 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Plataforma cívica para relato rápido e anónimo de maus cheiros e odores no concelho da Mealhada.">
-  <title>Relato de Odores — Concelho da Mealhada</title>
+  
+  <!-- SEO Essencial e Metatags de Indexação -->
+  <title>Relato de Odores — Concelho da Mealhada | Iniciativa Cívica</title>
+  <meta name="description" content="Plataforma cívica para relato rápido e anónimo de maus cheiros e poluição no Concelho da Mealhada. Envio direto de alertas para os serviços municipais de ambiente.">
+  <meta name="keywords" content="Mealhada, maus cheiros, odores, poluição atmosférica, ambiente mealhada, Bairrada, Pampilhosa, Luso, Casal Comba, Vacariça, Barcouço, qualidade do ar, câmara municipal mealhada, denúncia odores, relato civico">
+  <meta name="author" content="Iniciativa Cívica do Concelho da Mealhada">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://mau-cheiro-mld.vercel.app/">
+  <meta name="theme-color" content="#1E5A38">
+
+  <!-- Metatags Geográficas (SEO Local) -->
+  <meta name="geo.region" content="PT-01">
+  <meta name="geo.placename" content="Mealhada">
+  <meta name="geo.position" content="40.3789;-8.4503">
+  <meta name="ICBM" content="40.3789, -8.4503">
+
+  <!-- Open Graph / Redes Sociais (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Relato de Odores — Concelho da Mealhada">
+  <meta property="og:title" content="Relato de Odores — Concelho da Mealhada | Iniciativa Cívica">
+  <meta property="og:description" content="Reporte de forma rápida e anónima episódios de maus cheiros e poluição no Concelho da Mealhada. Envio direto para os serviços municipais de ambiente.">
+  <meta property="og:url" content="https://mau-cheiro-mld.vercel.app/">
+  <meta property="og:image" content="https://mau-cheiro-mld.vercel.app/og-image.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Plataforma Cívica de Relato de Odores — Concelho da Mealhada">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Relato de Odores — Concelho da Mealhada">
+  <meta name="twitter:description" content="Plataforma cívica para monitorização e alerta de maus cheiros e qualidade do ar no Concelho da Mealhada.">
+  <meta name="twitter:image" content="https://mau-cheiro-mld.vercel.app/og-image.svg">
+
+  <!-- Favicon e Manifest PWA -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Tipografia e Estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Dados Estruturados Schema.org / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://mau-cheiro-mld.vercel.app/#website",
+        "url": "https://mau-cheiro-mld.vercel.app/",
+        "name": "Relato de Odores — Concelho da Mealhada",
+        "description": "Plataforma cívica para relato rápido e anónimo de maus cheiros e poluição no Concelho da Mealhada.",
+        "inLanguage": "pt-PT"
+      },
+      {
+        "@type": "GovernmentService",
+        "@id": "https://mau-cheiro-mld.vercel.app/#service",
+        "name": "Monitorização e Relato Cívico de Odores da Mealhada",
+        "serviceType": "Monitorização Ambiental e Qualidade do Ar",
+        "provider": {
+          "@type": "Organization",
+          "name": "Iniciativa Cívica do Concelho da Mealhada"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Concelho da Mealhada",
+          "containsPlace": [
+            { "@type": "Place", "name": "União das Freguesias da Mealhada, Ventosa do Bairro e Antes" },
+            { "@type": "Place", "name": "Freguesia de Pampilhosa" },
+            { "@type": "Place", "name": "Freguesia de Luso" },
+            { "@type": "Place", "name": "Freguesia de Casal Comba" },
+            { "@type": "Place", "name": "Freguesia de Vacariça" },
+            { "@type": "Place", "name": "Freguesia de Barcouço" }
+          ]
+        },
+        "description": "Serviço cívico municipal para comunicação rápida e anónima de episódios de maus odores às entidades competentes da Mealhada."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mau-cheiro-mld.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O relato de maus cheiros é anónimo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Todos os campos do formulário são estritamente opcionais. Se o munícipe não preencher o campo de contacto, o relato é 100% anónimo e não há recolha de dados identificativos ou rastreamento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quem recebe os alertas enviados por esta plataforma?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cada relato submetido é formatado e enviado por email diretamente para os três departamentos municipais competentes: Gabinete da Presidência (gabpresidencia@cm-mealhada.pt), Divisão de Gestão Urbanística e Transportes (dguptonline@cm-mealhada.pt) e Serviço de Ambiente (ambiente@cm-mealhada.pt)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que tipos de odores ou poluição devo reportar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Podem ser comunicados quaisquer episódios de poluição odorífera no concelho da Mealhada: efluentes industriais, odores de saneamento/ETAR, instalações pecuárias, adubação intensiva, queimadas de sobrantes ou odores químicos incomodativos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais são as freguesias do concelho abrangidas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A plataforma abrange a totalidade do concelho da Mealhada: Mealhada, Ventosa do Bairro, Antes, Pampilhosa, Luso, Casal Comba, Vacariça e Barcouço, bem como os eixos industriais e rodoviários circundantes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A Câmara Municipal tem de ativar algum serviço?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não. Os relatos entram diretamente na caixa de entrada oficial dos emails municipais, com cabeçalho padronizado, localização, hora e nível de intensidade, sem necessidade de qualquer integração ou adesão prévia."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="page-wrapper">
@@ -189,6 +314,168 @@
           <span>↺</span> Enviar outro relato
         </button>
       </section>
+
+      <!-- Secção Informativa 1: Como Funciona o Relato Cívico -->
+      <section class="card info-card" id="como-funciona" aria-labelledby="como-funciona-title">
+        <div class="info-card-header">
+          <div class="info-card-badge">Guia Rápido</div>
+          <h2 id="como-funciona-title" class="info-card-title">Como Funciona a Plataforma?</h2>
+          <p class="info-card-lead">Uma ponte cívica direta e independente entre os munícipes e os serviços municipais de ambiente da Mealhada.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-badge">1</div>
+            <div class="step-icon">👃</div>
+            <h3 class="step-title">Detete & Localize</h3>
+            <p class="step-desc">Sentiu um mau cheiro desagradável? Aponte a rua, lugar ou utilize o botão <strong>📍 Usar GPS</strong> para registar as coordenadas em tempo real.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">2</div>
+            <div class="step-icon">⚡</div>
+            <h3 class="step-title">Preenchimento Opcional</h3>
+            <p class="step-desc">Sem burocracias nem registos obrigatórios. Preencha apenas o que puder: a submissão pode ser <strong>100% anónima</strong> em menos de 30 segundos.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">3</div>
+            <div class="step-icon">🏛️</div>
+            <h3 class="step-title">Alerta Oficial Imediato</h3>
+            <p class="step-desc">A ocorrência é enviada imediatamente por email para o <strong>Gabinete da Presidência</strong>, <strong>Urbanismo</strong> e <strong>Serviço de Ambiente</strong> da autarquia.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Secção Informativa 2: Âmbito Territorial & Freguesias Abrangidas -->
+      <section class="card info-card" id="freguesias-abrangidas" aria-labelledby="freguesias-title">
+        <div class="info-card-header">
+          <div class="info-card-badge">Âmbito Geográfico</div>
+          <h2 id="freguesias-title" class="info-card-title">Freguesias e Zonas Monitorizadas</h2>
+          <p class="info-card-lead">A monitorização abrange todo o Concelho da Mealhada, com foco especial em áreas habitacionais e industriais propensas a episódios de odores.</p>
+        </div>
+
+        <div class="freguesias-grid">
+          <div class="freguesia-pill">
+            <span class="pill-dot"></span>
+            <div>
+              <strong>Mealhada, Ventosa do Bairro e Antes</strong>
+              <div class="pill-note">Sede de concelho & zonas residenciais</div>
+            </div>
+          </div>
+          <div class="freguesia-pill">
+            <span class="pill-dot"></span>
+            <div>
+              <strong>Pampilhosa</strong>
+              <div class="pill-note">Área ferroviária & eixos habitacionais</div>
+            </div>
+          </div>
+          <div class="freguesia-pill">
+            <span class="pill-dot"></span>
+            <div>
+              <strong>Luso</strong>
+              <div class="pill-note">Vila termal, Buçaco & envolvente</div>
+            </div>
+          </div>
+          <div class="freguesia-pill">
+            <span class="pill-dot"></span>
+            <div>
+              <strong>Casal Comba</strong>
+              <div class="pill-note">Zonas rurais, agrícolas e industriais</div>
+            </div>
+          </div>
+          <div class="freguesia-pill">
+            <span class="pill-dot"></span>
+            <div>
+              <strong>Vacariça</strong>
+              <div class="pill-note">Encostas vinícolas e lugares limítrofes</div>
+            </div>
+          </div>
+          <div class="freguesia-pill">
+            <span class="pill-dot"></span>
+            <div>
+              <strong>Barcouço</strong>
+              <div class="pill-note">Fronteira sul do concelho & EN1</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="freguesias-hotspots">
+          <p><strong>🎯 Pontos de atenção frequente:</strong> Zonas Industriais da Mealhada e Pedrulha, eixos da EN1/IC2, áreas de adubação e exploração pecuária, bacias de retenção e redes de saneamento/ETAR da Bairrada.</p>
+        </div>
+      </section>
+
+      <!-- Secção Informativa 3: FAQ (Perguntas Frequentes) -->
+      <section class="card info-card" id="perguntas-frequentes" aria-labelledby="faq-title">
+        <div class="info-card-header">
+          <div class="info-card-badge">Esclarecimentos</div>
+          <h2 id="faq-title" class="info-card-title">Perguntas Frequentes (FAQ)</h2>
+          <p class="info-card-lead">Tire as suas dúvidas sobre o funcionamento do relato cívico de odores na Mealhada.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>O meu relato é verdadeiramente anónimo?</span>
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p><strong>Sim, 100% anónimo.</strong> Todos os campos do formulário são opcionais. Caso não preencha o campo "Contacto para Acompanhamento", não é registado nem transmitido nenhum dado que possa identificá-lo pessoalmente, em total conformidade com o RGPD.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Quem recebe exatamente os emails de alerta?</span>
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Cada reporte gera um email estruturado enviado simultaneamente para três endereços oficiais da Câmara Municipal da Mealhada:</p>
+              <ul>
+                <li><strong>Gabinete da Presidência:</strong> <code>gabpresidencia@cm-mealhada.pt</code></li>
+                <li><strong>Divisão de Gestão Urbanística e Transportes:</strong> <code>dguptonline@cm-mealhada.pt</code></li>
+                <li><strong>Serviço de Ambiente:</strong> <code>ambiente@cm-mealhada.pt</code></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Que tipo de odores devem ser comunicados?</span>
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Qualquer cheiro persistente ou anormal que perturbe o bem-estar da população, nomeadamente:</p>
+              <ul>
+                <li>Cheiros químicos ou de laboração industrial;</li>
+                <li>Emanações de saneamento, fossas ou ETAR;</li>
+                <li>Odores intensos de pecuária, suiniculturas ou estrumeiras;</li>
+                <li>Fumos e queimadas ilegais ou tóxicas.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>A Câmara Municipal teve de instalar ou aprovar esta plataforma?</span>
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Não. Esta é uma <strong>iniciativa cívica independente</strong> sem custos para o erário público. Os alertas entram diretamente na caixa de correio eletrónico oficial dos serviços municipais competentes, tal como aconteceria se um cidadão enviasse um email por iniciativa própria, mas com dados georreferenciados e normalizados.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Por que razão a participação de todos é importante?</span>
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Os episódios de poluição atmosférica e maus cheiros são muitas vezes efémeros e dependem do vento e da hora do dia. O registo sistemático por múltiplos munícipes permite criar um histórico irrefutável e comprovado, ajudando a identificar a origem exata e pressionando a tomada de medidas de fiscalização e mitigação.</p>
+            </div>
+          </details>
+        </div>
+      </section>
     </main>
 
     <!-- Rodapé -->
@@ -205,6 +492,13 @@
         <p class="footer-subtext">
           Desenvolvido com respeito pela acessibilidade, simplicidade e proteção de dados (RGPD).
         </p>
+        <nav class="footer-nav" aria-label="Links úteis e de rastreio">
+          <a href="/sitemap.xml" title="Mapa do Site em formato XML">Mapa do Site (XML)</a>
+          <span class="footer-sep" aria-hidden="true">•</span>
+          <a href="/robots.txt" title="Diretrizes de rastreio para motores de busca">Diretrizes de Rastreio (Robots)</a>
+          <span class="footer-sep" aria-hidden="true">•</span>
+          <a href="/llms.txt" title="Documento estruturado para motores de Inteligência Artificial">Ficheiro IA (llms.txt)</a>
+        </nav>
       </div>
     </footer>
   </div>

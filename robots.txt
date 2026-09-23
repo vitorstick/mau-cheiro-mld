@@ -1,0 +1,31 @@
+# ==============================================================================
+# Relato de Odores — Concelho da Mealhada
+# robots.txt — Diretrizes de Rastreio para Motores de Busca e Crawlers
+# ==============================================================================
+
+User-agent: *
+Allow: /
+# Proteger endpoints de envio de formulário e dados internos
+Disallow: /api/
+
+# Rastreio Amigável para Motores de Pesquisa com IA e Modelos LLM
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Mapa do Site
+Sitemap: https://mau-cheiro-mld.vercel.app/sitemap.xml

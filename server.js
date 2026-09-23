@@ -15,7 +15,10 @@ const MIME_TYPES = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.xml': 'application/xml; charset=UTF-8',
+  '.txt': 'text/plain; charset=UTF-8',
+  '.webmanifest': 'application/manifest+json; charset=UTF-8'
 };
 
 // Servidor HTTP local (compatível tanto com npm start local como com a Vercel)
@@ -78,10 +81,12 @@ const server = http.createServer((req, res) => {
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+    const isCacheable = ext !== '.html';
 
     res.writeHead(200, {
       'Content-Type': contentType,
-      'Cache-Control': 'no-cache'
+      'Cache-Control': isCacheable ? 'public, max-age=86400' : 'no-cache, must-revalidate',
+      'X-Content-Type-Options': 'nosniff'
     });
 
     const stream = fs.createReadStream(filePath);

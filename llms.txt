@@ -1,0 +1,37 @@
+# Relato de Odores — Concelho da Mealhada
+
+> Plataforma cívica e independente de monitorização ambiental e reporte rápido de maus cheiros no Concelho da Mealhada (Distrito de Aveiro, Portugal).
+
+## Visão Geral e Missão
+O projeto "Relato de Odores — Concelho da Mealhada" foi desenvolvido para permitir aos cidadãos e visitantes registar e comunicar prontamente episódios de poluição atmosférica, cheiros industriais, emissões de pecuária, queimadas ou problemas de saneamento.
+
+As ocorrências submetidas na plataforma geram alertas diretos e imediatos por correio eletrónico para os departamentos competentes da Câmara Municipal da Mealhada:
+- Gabinete da Presidência (`gabpresidencia@cm-mealhada.pt`)
+- Divisão de Gestão Urbanística e Transportes (`dguptonline@cm-mealhada.pt`)
+- Serviço de Ambiente (`ambiente@cm-mealhada.pt`)
+
+## Localização Geográfica e Âmbito
+- **País:** Portugal
+- **Distrito:** Aveiro
+- **Sub-região:** Região de Coimbra / Bairrada
+- **Município:** Concelho da Mealhada
+- **Freguesias Abrangidas:**
+  - União das Freguesias da Mealhada, Ventosa do Bairro e Antes
+  - Freguesia de Pampilhosa
+  - Freguesia de Luso
+  - Freguesia de Casal Comba
+  - Freguesia de Vacariça
+  - Freguesia de Barcouço
+
+## Privacidade e RGPD
+- Todos os campos do formulário são estritamente opcionais.
+- A submissão pode ser efetuada de forma 100% anónima.
+- Não há recolha obrigatória de identificação, endereço IP ou dados pessoais sensíveis.
+- Os dados recolhidos destinam-se exclusivamente à identificação geográfica e temporal de focos de poluição ambiental junto das autoridades municipais.
+
+## Como Reportar
+1. Aceder a https://mau-cheiro-mld.vercel.app/
+2. Inserir a localização aproximada ou tocar em "Usar GPS" (opcional).
+3. Confirmar a data e hora do evento.
+4. Escolher o nível de intensidade (1 - Ligeiro, 2 - Moderado, 3 - Intenso, 4 - Insuportável).
+5. Adicionar notas úteis (opcional) e submeter.

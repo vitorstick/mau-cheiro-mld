@@ -1,17 +1,9 @@
 /**
  * Relato de Odores — Concelho da Mealhada
- * Lógica do Formulário e Envio Assíncrono com FormSubmit.co
+ * Lógica do Formulário e Envio Direto via Servidor Node.js (Nodemailer)
+ * Os emails são enviados a partir de odores.mealhada@gmail.com
+ * diretamente para os serviços da Câmara Municipal da Mealhada.
  */
-
-// ============================================================================
-// CONFIGURAÇÃO DOS EMAILS DE DESTINO (TODOS COMO PRINCIPAIS)
-// Os 3 serviços municipais receberão o relato diretamente no campo "Para:"
-// ============================================================================
-const RECIPIENT_EMAILS = [
-  'gabpresidencia@cm-mealhada.pt', // Gabinete da Presidência
-  'dguptonline@cm-mealhada.pt',   // Gestão Urbanística e Transportes
-  'ambiente@cm-mealhada.pt'        // Serviço de Ambiente
-];
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('smellReportForm');
@@ -106,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnGps.style.display = 'none';
   }
 
-  // 5. Submissão do Formulário via FormSubmit.co
+  // 5. Submissão do Formulário via Servidor Node.js (Nodemailer)
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     formError.style.display = 'none';
@@ -115,44 +107,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Indicação de carregamento
     const btnTextoOriginal = btnSubmit.innerHTML;
     btnSubmit.disabled = true;
-    btnSubmit.innerHTML = '<span>⏳</span><span>A enviar relato...</span>';
+    btnSubmit.innerHTML = '<span>⏳</span><span>A enviar relato para a autarquia...</span>';
 
     try {
-      const formData = new FormData(form);
+      const payload = {
+        localizacao: localizacaoInput.value.trim(),
+        dataHora: dataHoraInput.value,
+        intensidade: intensidadeInput.value,
+        detalhes: document.getElementById('detalhes')?.value.trim() || '',
+        contacto: document.getElementById('contacto')?.value.trim() || ''
+      };
 
-      // Adicionar timestamp de envio
-      formData.append('Data_Envio_Submissao', new Date().toLocaleString('pt-PT'));
+      const response = await fetch('/api/report', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
 
-      // Disparar envio em paralelo para todos os destinatários como principais
-      const pedidosEnvio = RECIPIENT_EMAILS.map(email =>
-        fetch(`https://formsubmit.co/ajax/${email}`, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json'
-          },
-          body: formData
-        })
-      );
+      const resultado = await response.json();
 
-      const resultados = await Promise.allSettled(pedidosEnvio);
-
-      // Verificar se pelo menos um dos envios foi entregue com sucesso
-      const algumSucesso = resultados.some(
-        r => r.status === 'fulfilled' && r.value.ok
-      );
-
-      if (algumSucesso) {
+      if (response.ok && resultado.success) {
         // Sucesso: alternar para o cartão de agradecimento
         formCard.style.display = 'none';
         successCard.style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        throw new Error('Não foi possível entregar o relato aos serviços municipais. Por favor tente novamente.');
+        throw new Error(resultado.message || 'Ocorreu um problema ao enviar o relato.');
       }
     } catch (err) {
       console.error('Erro no envio:', err);
       formError.style.display = 'block';
-      formError.textContent = 'Não foi possível submeter o relato de momento (' + (err.message || 'Erro de rede') + '). Se o problema persistir, verifique a sua ligação à internet.';
+      formError.textContent = err.message || 'Não foi possível submeter o relato. Verifique a ligação ao servidor.';
     } finally {
       btnSubmit.disabled = false;
       btnSubmit.innerHTML = btnTextoOriginal;

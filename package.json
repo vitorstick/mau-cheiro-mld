@@ -6,7 +6,16 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["mealhada", "odores", "civic", "formsubmit"],
+  "keywords": [
+    "mealhada",
+    "odores",
+    "civic",
+    "formsubmit"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "nodemailer": "^10.0.10"
+  }
 }

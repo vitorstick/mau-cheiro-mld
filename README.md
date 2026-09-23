@@ -60,41 +60,8 @@ O envio é gerido pelo servidor local em **Node.js** com a biblioteca **Nodemail
 * 🏗️ **Divisão de Gestão Urbanística e Transportes:** `dguptonline@cm-mealhada.pt`
 * 🌿 **Serviço de Ambiente:** `ambiente@cm-mealhada.pt`
 
-### Configuração de Segurança no ficheiro `.env`
-O ficheiro [`.env`](file:///c:/Projects/mld-email/.env) guarda as credenciais seguras de envio:
-```env
-PORT=3000
-GMAIL_USER=odores.mealhada@gmail.com
-GMAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx
-```
-*(A palavra-passe de aplicação é um código de 16 letras gerado na conta Google em [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)).*
 
----
-
-## 5. Como Executar Localmente
-
-1. Certifique-se de que as dependências estão instaladas:
-   ```powershell
-   npm install
-   ```
-2. Inicie o servidor:
-   ```powershell
-   npm start
-   ```
-3. Aceda à plataforma no seu navegador:
-   👉 **`http://localhost:3000`**
-
----
-
-## 6. Histórico e Registo de Envios
-
-* **Arquivo no Gmail (Pasta "Enviados"):**
-  * Todas as mensagens enviadas ficam automaticamente arquivadas na pasta **Enviados** (*Sent*) da conta `odores.mealhada@gmail.com` em [mail.google.com](https://mail.google.com/).
-  * Cada email contém o registo oficial com data e hora exata, a tabela institucional formatada e a confirmação de entrega aos três destinatários.
-  * O servidor não cria ficheiros na máquina local, preservando a simplicidade e a privacidade.
-
-
-## 78. Privacidade e Proteção de Dados (RGPD)
+## 4. Privacidade e Proteção de Dados (RGPD)
 
 * Nenhum campo do formulário é de preenchimento obrigatório.
 * Caso o munícipe não preencha o contacto, a submissão é **completamente anónima** e não recolhe dados identificativos.
